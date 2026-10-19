@@ -1,0 +1,76 @@
+name: verify
+# A push to main that passes also deploys the registry to GitHub Pages, so Pages is never ahead of main and a red main keeps the last good one online.
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/verify
+      # verify.sh serves the registry from localhost; the published one names its own homepage
+      - name: Build the registry for GitHub Pages
+        if: github.event_name == 'push'
+        env:
+          REGISTRY_HOMEPAGE: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+        run: |
+          pnpm --dir packages/pipeline generate
+          cd packages/registry
+          rm -rf dist/r
+          pnpm dlx "$(cat ../pipeline/upstream/RELEASE)" build -o dist/r
+      # the site is another consumer of the registry (shadcn add from localhost, examples from consumer/src, which verify.sh left behind)
+      - name: Build the site
+        if: github.event_name == 'push'
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}
+          SITE_URL: https://${{ github.repository_owner }}.github.io
+        run: |
+          python3 -m http.server 8080 -d packages/registry/dist >/dev/null 2>&1 &
+          trap 'kill $!' EXIT
+          sleep 1
+          cd site
+          node scripts/prepare.mjs
+          pnpm exec astro build
+      # site at the root, the registry (r/, npm/) beside it
+      - name: Assemble the Pages artifact
+        if: github.event_name == 'push'
+        run: |
+          mkdir pages
+          cp -r site/dist/. pages/
+          cp -r packages/registry/dist/. pages/
+      - uses: actions/upload-pages-artifact@v5
+        if: github.event_name == 'push'
+        with:
+          path: pages
+
+  # Not in this repository, which never publishes: the production repo adds a `publish-recharts` job here (needs: verify, if: push, id-token: write)
+  # and makes `deploy` need it too, because the chart item pins @preactcn/recharts@<version> and must not go online before that version is on npm.
+  # The job runs `pnpm --dir packages/pipeline recharts`, `pnpm --dir packages/recharts build` and
+  # `npm publish --provenance --access public --tag <dist-tag>` (a prerelease version needs --tag) when `npm view @preactcn/recharts@<version>` finds nothing.
+  # Once it publishes, delete consumer/.npmrc and consumer-fresh/.npmrc and re-lock both.
+  deploy:
+    needs: verify
+    if: github.event_name == 'push'
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

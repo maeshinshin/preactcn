@@ -1,0 +1,6 @@
+{
+  // read by the shadcn CLI only, to resolve the `@/` aliases of components.json (Deno resolves them through deno.json)
+  "compilerOptions": {
+    "paths": { "@/*": ["./*"] }
+  }
+}

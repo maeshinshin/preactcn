@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es2023",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "strict": true,
+    "skipLibCheck": true,
+    "types": ["node"],
+    "noEmit": true,
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
+    "paths": {
+      "recharts": ["./dist/index.d.ts"],
+      "@preactcn/recharts": ["./dist/index.d.ts"],
+      "@/components/ui/chart": ["./test/.gen/ui/chart.tsx"],
+      "@/components/ui/card": ["./test/stubs/card.tsx"],
+      "@/components/example": ["./test/stubs/example.tsx"],
+      "@/lib/utils": ["./test/stubs/utils.ts"]
+    }
+  },
+  "include": ["runtime", "scripts", "test"],
+  "exclude": ["runtime/globals.d.ts"]
+}

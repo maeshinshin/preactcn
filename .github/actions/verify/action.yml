@@ -1,0 +1,54 @@
+name: verify
+description: Install the toolchain, optionally sync a shadcn release, run verify.sh with every stage required, upload the report
+inputs:
+  tag:
+    description: shadcn release tag to sync before verifying (empty verifies the committed snapshot)
+    default: ""
+runs:
+  using: composite
+  steps:
+    - uses: pnpm/action-setup@v6
+      with:
+        version: 12
+    - uses: actions/setup-node@v7
+      with:
+        node-version: 24
+        cache: pnpm
+        cache-dependency-path: |
+          packages/pipeline/pnpm-lock.yaml
+          packages/recharts/pnpm-lock.yaml
+          consumer/pnpm-lock.yaml
+          reference/pnpm-lock.yaml
+    # Fresh 2.3 needs the `links` key of Deno 2.9; ubuntu-24.04 already has Firefox and geckodriver (/usr/bin)
+    - uses: denoland/setup-deno@v2
+      with:
+        deno-version: 2.9.x
+    # consumer/ is installed by verify.sh: its lockfile names the @preactcn/recharts tarball that verify.sh builds and serves
+    - name: Install
+      shell: bash
+      run: |
+        for dir in packages/pipeline packages/recharts reference; do
+          (cd "$dir" && pnpm install --frozen-lockfile) || exit 1
+        done
+    - name: Sync upstream
+      if: inputs.tag != ''
+      shell: bash
+      env:
+        TAG: ${{ inputs.tag }}
+        GITHUB_TOKEN: ${{ github.token }}
+      run: pnpm --dir packages/pipeline run sync "$TAG"
+    - name: verify.sh
+      shell: bash
+      env:
+        STRICT: "1"
+      run: bash packages/pipeline/scripts/verify.sh
+    - uses: actions/upload-artifact@v7
+      if: always()
+      with:
+        name: verify-report
+        include-hidden-files: true
+        retention-days: 14
+        path: |
+          consumer/verify-report.json
+          consumer/.verify/diff/
+          consumer/.verify/**/*.log

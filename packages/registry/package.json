@@ -1,0 +1,28 @@
+{
+  "name": "@preactcn/registry",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:preact11": "PREACT=11 vitest run",
+    "typecheck": "tsc --noEmit",
+    "typecheck:preact11": "tsc --noEmit -p tsconfig.preact11.json"
+  },
+  "dependencies": {
+    "@date-fns/tz": "^1.4.1",
+    "@floating-ui/dom": "^1.8.0",
+    "date-fns": "^4.1.0",
+    "embla-carousel": "^8.6.0",
+    "embla-carousel-reactive-utils": "^8.6.0",
+    "preact": "^10.29.8"
+  },
+  "devDependencies": {
+    "@testing-library/preact": "^3.2.4",
+    "@testing-library/user-event": "^14.6.7",
+    "happy-dom": "^20.14.6",
+    "preact-render-to-string": "^6.8.0",
+    "preact11": "npm:preact@11.0.1",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.3"
+  }
+}

@@ -1,0 +1,22 @@
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Fresh build directory
+_fresh/
+# npm + other dependencies
+node_modules/
+vendor/
+
+
+# installed by shadcn add and copied from consumer/ by scripts/verify.mjs
+/components/
+/hooks/
+/lib/
+/examples/
+/shims/
+/app/
+/static/collect-errors.js

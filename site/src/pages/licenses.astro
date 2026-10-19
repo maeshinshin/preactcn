@@ -1,0 +1,43 @@
+---
+import { execFileSync } from "node:child_process";
+import { readdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
+import Layout from "../layouts/Layout.astro";
+
+// astro build runs in site/; the project files sit one level up
+const root = join(process.cwd(), "..");
+const project = readFileSync(join(root, "LICENSE"), "utf8").split("\n").filter((l) => l.trim()).slice(0, 2).map((l) => l.trim()).join(", ");
+const notice = readFileSync(join(root, "NOTICE"), "utf8");
+const thirdParty = readFileSync(join(root, "THIRD_PARTY_NOTICES"), "utf8");
+
+// every production dependency of the site (the client JS, CSS and fonts are bundled from them), one entry per name@version
+const listed: Record<string, { name: string; versions: string[]; paths: string[]; license: string; homepage?: string }[]> = JSON.parse(
+  execFileSync("pnpm", ["licenses", "list", "--prod", "--json"], { encoding: "utf8", maxBuffer: 1 << 28 }),
+);
+const packages = Object.values(listed).flat().flatMap((p) =>
+  p.versions.map((version, i) => {
+    const file = readdirSync(p.paths[i]!).find((f) => /^(licen[sc]e|copying)/i.test(f));
+    return { name: p.name, version, license: p.license, homepage: p.homepage, text: file ? readFileSync(join(p.paths[i]!, file), "utf8").trim() : "" };
+  }),
+).sort((a, b) => a.name.localeCompare(b.name) || a.version.localeCompare(b.version));
+---
+<Layout title="Licenses">
+  <h1 class="text-3xl font-semibold tracking-tight">Licenses</h1>
+  <p class="mt-2 max-w-2xl text-muted-foreground">preactcn is distributed under the license below. It contains code derived from the projects in the second section, and this site bundles the packages in the third.</p>
+
+  <h2 class="mt-10 mb-2 text-xl font-semibold">preactcn</h2>
+  <p class="mb-2 text-sm text-muted-foreground">{project}</p>
+  <pre class="whitespace-pre-wrap break-words rounded-lg border bg-card p-4 text-xs">{notice.trim()}</pre>
+
+  <h2 class="mt-10 mb-2 text-xl font-semibold">Third-party notices</h2>
+  <pre class="whitespace-pre-wrap break-words rounded-lg border bg-card p-4 text-xs">{thirdParty.trim()}</pre>
+
+  <h2 class="mt-10 mb-2 text-xl font-semibold">Packages bundled into this site ({packages.length})</h2>
+  <p class="mb-4 max-w-2xl text-sm text-muted-foreground">Production dependencies of this site, fonts included, with each package's license file. This includes build-time tooling that is not shipped to the browser.</p>
+  {packages.map((p) => (
+    <section class="mb-6">
+      <h3 class="font-mono text-sm font-medium">{p.name}@{p.version} <span class="font-sans font-normal text-muted-foreground">{p.license}</span></h3>
+      {p.text ? <pre class="mt-1 whitespace-pre-wrap break-words rounded-lg border bg-card p-3 text-xs">{p.text}</pre> : <p class="mt-1 text-xs text-muted-foreground">No license file in the package: {p.license}{p.homepage && <> , <a class="underline" href={p.homepage}>{p.homepage}</a></>}</p>}
+    </section>
+  ))}
+</Layout>

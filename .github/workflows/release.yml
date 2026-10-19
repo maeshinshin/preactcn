@@ -1,0 +1,110 @@
+name: release
+# Daily: when shadcn has a release that upstream/RELEASE does not record, sync it, verify with every stage required,
+# then open a pull request with the refreshed files. Merging it publishes: the push to main runs verify.yml, which deploys to GitHub Pages.
+# On failure no pull request is opened and an issue links the report; the last good registry stays online.
+# shortcut: a failing release quarantines the whole run, not single items; split it per item when one component keeps blocking releases.
+on:
+  schedule:
+    - cron: "23 3 * * *"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "shadcn release tag to run even if recorded (shadcn@x.y.z); empty runs the latest if new"
+        required: false
+        default: ""
+permissions: {}
+concurrency:
+  group: release
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    outputs:
+      tag: ${{ steps.latest.outputs.tag }}
+      slug: ${{ steps.latest.outputs.slug }}
+      changed: ${{ steps.latest.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: packages/pipeline/upstream/RELEASE
+          sparse-checkout-cone-mode: false
+          persist-credentials: false
+      - id: latest
+        env:
+          INPUT_TAG: ${{ inputs.tag }}
+        run: |
+          recorded=$(cat packages/pipeline/upstream/RELEASE)
+          latest="shadcn@$(curl -fsS https://registry.npmjs.org/shadcn/latest | jq -r .version)"
+          tag="${INPUT_TAG:-$latest}"
+          if [ -n "$INPUT_TAG" ] || [ "$tag" != "$recorded" ]; then changed=true; else changed=false; fi
+          { echo "tag=$tag"; echo "slug=${tag//[^A-Za-z0-9.]/-}"; echo "changed=$changed"; } >> "$GITHUB_OUTPUT"
+          echo "recorded $recorded, latest $latest, run $tag: $changed"
+
+  verify:
+    needs: check
+    if: needs.check.outputs.changed == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/verify
+        with:
+          tag: ${{ needs.check.outputs.tag }}
+      - name: Collect the changes for the pull request
+        run: |
+          git add -A
+          git diff --cached --binary > "$RUNNER_TEMP/changes.patch"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: changes
+          path: ${{ runner.temp }}/changes.patch
+
+  propose:
+    needs: [check, verify]
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v8
+        with:
+          name: changes
+          path: ${{ runner.temp }}
+      - run: git apply --allow-empty "$RUNNER_TEMP/changes.patch"
+      - uses: peter-evans/create-pull-request@v8
+        with:
+          branch: release/${{ needs.check.outputs.slug }}
+          commit-message: "chore: sync upstream to ${{ needs.check.outputs.tag }}"
+          title: "Sync upstream to ${{ needs.check.outputs.tag }}"
+          body: |
+            Snapshot, reference twin and generated files for `${{ needs.check.outputs.tag }}`.
+            `verify.sh` passed with every stage required: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            When `chart` pins another recharts, `packages/recharts` (version, dependencies, lockfile) and the lockfiles of both consumers change with it; `@preactcn/recharts` is published from the production repository only.
+            Merging records the release in `upstream/RELEASE`; the push to main is verified again and deployed to GitHub Pages by `verify.yml`.
+
+  report-failure:
+    needs: [check, verify]
+    if: always() && needs.verify.result == 'failure'
+    runs-on: ubuntu-24.04
+    permissions:
+      issues: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      TAG: ${{ needs.check.outputs.tag }}
+    steps:
+      - run: |
+          body="verify.sh failed for $TAG, so no pull request was opened and the last good registry stays online. Report and diff output are the verify-report artifact of $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          number=$(gh issue list --state open --search "\"$TAG\" in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$number" ]; then
+            gh issue comment "$number" --body "$body"
+          else
+            gh issue create --title "Release $TAG failed verification" --body "$body"
+          fi

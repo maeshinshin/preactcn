@@ -1,0 +1,14 @@
+node_modules
+dist
+.astro
+.verify
+
+# installed by shadcn add and copied from ../consumer by scripts/prepare.mjs
+src/components/
+src/hooks/
+src/lib/
+src/examples/
+src/shims/
+src/app/
+src/islands/
+src/sections.json

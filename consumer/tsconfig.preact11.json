@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "next/image": ["./src/shims/next-image.tsx"],
+      "next/link": ["./src/shims/next-link.tsx"],
+      "ai": ["./src/shims/ai.ts"],
+      "@ai-sdk/react": ["./src/shims/ai-sdk-react.ts"],
+      "streamdown": ["./src/shims/streamdown.tsx"],
+      "preact": ["./node_modules/preact11"],
+      "preact/*": ["./node_modules/preact11/*"]
+    }
+  }
+}

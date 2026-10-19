@@ -1,0 +1,16 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "paths": {
+      "@/*": ["./src/*"],
+      "next/image": ["./src/shims/next-image.tsx"],
+      "next/link": ["./src/shims/next-link.tsx"],
+      "ai": ["./src/shims/ai.ts"],
+      "@ai-sdk/react": ["./src/shims/ai-sdk-react.ts"],
+      "streamdown": ["./src/shims/streamdown.tsx"]
+    }
+  },
+  "include": [".astro/types.d.ts", "src"]
+}

@@ -1,0 +1,86 @@
+---
+import "../styles/global.css";
+import { grouped } from "../items";
+import { Badge } from "../components/ui/badge";
+import NavToggle from "../chrome/NavToggle";
+import ThemeToggle from "../chrome/ThemeToggle";
+
+const { title, current, toc } = Astro.props; // toc: the sections of the current page, [{ id, title }]
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const github = "https://github.com/maeshinshin/preactcn";
+const setup = `${base}/setup/`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <script is:inline src={`${base}/collect-errors.js`}></script>
+    <script is:inline>
+      try {
+        const t = localStorage.getItem("theme");
+        if (t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.classList.add("dark");
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <header class="sticky top-0 z-40 border-b bg-background/85 backdrop-blur">
+      <div class="mx-auto flex h-14 max-w-[90rem] items-center gap-2 px-3 md:px-5">
+        <NavToggle client:load />
+        <a href={`${base}/`} class="flex items-center gap-2 font-semibold tracking-tight">
+          <svg viewBox="0 0 24 24" class="size-6 text-brand" aria-hidden="true"><path fill="currentColor" d="M12 1.5 21.1 6.75v10.5L12 22.5 2.9 17.25V6.75z" /><ellipse cx="12" cy="12" rx="6.2" ry="2.4" fill="none" stroke="#fff" stroke-width="1.2" /><ellipse cx="12" cy="12" rx="6.2" ry="2.4" fill="none" stroke="#fff" stroke-width="1.2" transform="rotate(60 12 12)" /><ellipse cx="12" cy="12" rx="6.2" ry="2.4" fill="none" stroke="#fff" stroke-width="1.2" transform="rotate(120 12 12)" /></svg>
+          preactcn
+        </a>
+        <Badge variant="secondary" className="hidden sm:inline-flex">Preact 10 + 11</Badge>
+        <nav class="ml-auto flex items-center gap-1 text-sm" aria-label="Project">
+          <a class="rounded-md px-2 py-1.5 text-muted-foreground hover:text-brand" href={setup}>Setup</a>
+          <a class="rounded-md px-2 py-1.5 text-muted-foreground hover:text-brand" href={github}>GitHub</a>
+          <ThemeToggle client:load />
+        </nav>
+      </div>
+      <div class="h-0.5 bg-gradient-to-r from-brand via-brand/40 to-transparent"></div>
+    </header>
+    <div class="mx-auto flex max-w-[90rem] flex-col md:flex-row">
+      <aside id="sidebar" class="relative max-h-[70vh] shrink-0 overflow-y-auto border-b p-4 md:sticky md:top-[3.6875rem] md:h-[calc(100dvh-3.6875rem)] md:max-h-none md:w-60 md:border-r md:border-b-0">
+        <a
+          class="mb-5 block rounded-md px-2 py-1 text-sm font-medium text-foreground/70 hover:bg-muted hover:text-foreground aria-[current=page]:bg-brand/10 aria-[current=page]:text-brand"
+          href={setup}
+          aria-current={current === "setup" ? "page" : undefined}
+        >Setup</a>
+        {grouped.map((g) => (
+          <div class="mb-5">
+            <h2 class="mb-1.5 px-2 text-xs font-semibold tracking-wide text-muted-foreground uppercase">{g.category}</h2>
+            <ul class="grid gap-px text-sm">
+              {g.items.map((i) => (
+                <li>
+                  <a
+                    class="block rounded-md px-2 py-1 text-foreground/70 hover:bg-muted hover:text-foreground aria-[current=page]:bg-brand/10 aria-[current=page]:font-medium aria-[current=page]:text-brand"
+                    href={`${base}/components/${i.name}/`}
+                    aria-current={i.name === current ? "page" : undefined}
+                  >{i.name}</a>
+                  {i.name === current && toc?.length > 1 && (
+                    <ul class="my-1 ml-3 grid gap-px border-l pl-2 text-[0.8125rem]">
+                      {toc.map((t) => <li><a class="block truncate rounded-md px-2 py-0.5 text-muted-foreground hover:text-foreground" href={`#${t.id}`}>{t.title}</a></li>)}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </aside>
+      <main class="min-w-0 flex-1 px-4 py-8 md:px-8"><slot />
+        <footer class="mt-12 border-t pt-6 text-xs text-muted-foreground">
+          Unofficial project, not affiliated with shadcn or the Preact team. Components derived from shadcn/ui (MIT) and ported libraries; preactcn is Apache-2.0.{" "}
+          <a class="underline hover:text-foreground" href={`${base}/licenses/`}>Licenses</a>
+        </footer>
+      </main>
+    </div>
+    <script is:inline>
+      const side = document.getElementById("sidebar");
+      const link = side.querySelector("[aria-current]");
+      if (link) side.scrollTop = link.offsetTop - side.clientHeight / 2;
+    </script>
+  </body>
+</html>

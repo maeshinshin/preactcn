@@ -1,0 +1,5 @@
+# @preactcn/recharts
+
+recharts converted to Preact. The source of a recharts release is compiled with its React imports pointed at a small Preact adapter (`runtime/`, built on `preact` and `preact/hooks` only, no `preact/compat`), so the package follows upstream releases without hand-porting, and its version names the release it came from (`3.8.0-preact.1` is recharts 3.8.0, revision 1 of the conversion). It needs `preact` >=10.29 <12 and is used like recharts (`import { BarChart } from "@preactcn/recharts"`); the shadcn chart component of preactcn imports it. recharts is MIT licensed (see `LICENSE`, unchanged from its repository); its code is unchanged apart from the imports and one patch that turns off its development-mode state check (see `packages/pipeline/src/recharts.ts`).
+
+Install: `shadcn add @preactcn/chart` adds it as `@preactcn/recharts@<this version>`. While it is unpublished, `scripts/pack.ts` lays the built package out as a registry entry (tarball and packument) that pnpm and Deno read through `@preactcn:registry=<url>` in an `.npmrc`; `scripts/verify.sh` does that for the test projects.

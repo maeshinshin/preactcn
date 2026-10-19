@@ -1,0 +1,30 @@
+---
+// renders its slot (a markdown <Content />) as docs. The .md pipeline cannot swap elements (`components` is MDX only), so the HTML is post-processed:
+// README links to repo files (LICENSE, NOTICE, ...) would 404 on the site and point at the licenses page instead
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const html = (await Astro.slots.render("default")).replace(/href="(LICENSE|NOTICE|THIRD_PARTY_NOTICES)"/g, `href="${base}/licenses/"`);
+---
+<article class="docs mx-auto max-w-3xl" set:html={html} />
+<script>
+  // copy button on every code block, shown on hover (always on touch screens)
+  document.querySelectorAll<HTMLElement>(".docs pre").forEach((pre) => {
+    const wrap = document.createElement("div");
+    wrap.className = "docs-code";
+    pre.replaceWith(wrap);
+    wrap.append(pre);
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = "Copy";
+    button.setAttribute("aria-label", "Copy code");
+    button.onclick = async () => {
+      try {
+        await navigator.clipboard.writeText(pre.textContent ?? "");
+        button.textContent = "Copied";
+        setTimeout(() => (button.textContent = "Copy"), 1500);
+      } catch {
+        // shortcut: no fallback for insecure origins without the async clipboard API
+      }
+    };
+    wrap.append(button);
+  });
+</script>

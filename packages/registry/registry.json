@@ -1,0 +1,2694 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "preactcn",
+  "homepage": "http://localhost:8080",
+  "items": [
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "dependencies": ["clsx", "tailwind-merge"],
+      "files": [{ "path": "src/lib/utils.ts", "type": "registry:lib" }]
+    },
+    {
+      "name": "radix-accordion",
+      "type": "registry:lib",
+      "registryDependencies": [
+        "@preactcn/radix-collapsible",
+        "@preactcn/radix-slot"
+      ],
+      "files": [
+        {
+          "path": "src/radix/accordion.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/accordion.tsx"
+        },
+        {
+          "path": "src/radix/internal/collection.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/collection.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/radix/internal/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-controllable-state.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-alert-dialog",
+      "type": "registry:lib",
+      "registryDependencies": [
+        "@preactcn/radix-dialog",
+        "@preactcn/radix-slot"
+      ],
+      "files": [
+        {
+          "path": "src/radix/alert-dialog.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/alert-dialog.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-aspect-ratio",
+      "type": "registry:lib",
+      "registryDependencies": ["@preactcn/radix-slot"],
+      "files": [
+        {
+          "path": "src/radix/aspect-ratio.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/aspect-ratio.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-avatar",
+      "type": "registry:lib",
+      "registryDependencies": ["@preactcn/radix-slot"],
+      "files": [
+        {
+          "path": "src/radix/avatar.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/avatar.tsx"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-checkbox",
+      "type": "registry:lib",
+      "registryDependencies": ["@preactcn/radix-slot"],
+      "files": [
+        {
+          "path": "src/radix/checkbox.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/checkbox.tsx"
+        },
+        {
+          "path": "src/radix/internal/bubble-input.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/bubble-input.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/use-size.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-size.ts"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/presence.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/presence.tsx"
+        },
+        {
+          "path": "src/radix/internal/element.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/element.ts"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/radix/internal/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-controllable-state.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-collapsible",
+      "type": "registry:lib",
+      "registryDependencies": ["@preactcn/radix-slot"],
+      "files": [
+        {
+          "path": "src/radix/collapsible.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/collapsible.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/presence.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/presence.tsx"
+        },
+        {
+          "path": "src/radix/internal/element.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/element.ts"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/radix/internal/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-controllable-state.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-context-menu",
+      "type": "registry:lib",
+      "dependencies": ["@floating-ui/dom"],
+      "registryDependencies": [
+        "@preactcn/radix-direction",
+        "@preactcn/radix-slot"
+      ],
+      "files": [
+        {
+          "path": "src/radix/context-menu.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/context-menu.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/menu.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/menu.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/dismissable-layer.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/dismissable-layer.ts"
+        },
+        {
+          "path": "src/radix/internal/focus-scope.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/focus-scope.ts"
+        },
+        {
+          "path": "src/radix/internal/modal-layer.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/modal-layer.ts"
+        },
+        {
+          "path": "src/radix/internal/popper.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/popper.tsx"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/radix/internal/use-size.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-size.ts"
+        },
+        {
+          "path": "src/radix/internal/portal.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/portal.tsx"
+        },
+        {
+          "path": "src/radix/internal/presence.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/presence.tsx"
+        },
+        {
+          "path": "src/radix/internal/element.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/element.ts"
+        },
+        {
+          "path": "src/radix/internal/typeahead.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/typeahead.ts"
+        },
+        {
+          "path": "src/radix/internal/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-controllable-state.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-dialog",
+      "type": "registry:lib",
+      "registryDependencies": ["@preactcn/radix-slot"],
+      "files": [
+        {
+          "path": "src/radix/dialog.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/dialog.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/dismissable-layer.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/dismissable-layer.ts"
+        },
+        {
+          "path": "src/radix/internal/focus-scope.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/focus-scope.ts"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/modal-layer.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/modal-layer.ts"
+        },
+        {
+          "path": "src/radix/internal/non-modal-layer.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/non-modal-layer.ts"
+        },
+        {
+          "path": "src/radix/internal/portal.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/portal.tsx"
+        },
+        {
+          "path": "src/radix/internal/presence.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/presence.tsx"
+        },
+        {
+          "path": "src/radix/internal/element.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/element.ts"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/radix/internal/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-controllable-state.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-direction",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "src/radix/direction.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/direction.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radix-dropdown-menu",
+      "type": "registry:lib",
+      "dependencies": ["@floating-ui/dom"],
+      "registryDependencies": [
+        "@preactcn/radix-direction",
+        "@preactcn/radix-slot"
+      ],
+      "files": [
+        {
+          "path": "src/radix/dropdown-menu.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/dropdown-menu.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/menu.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/menu.tsx"
+        },
+        {
+          "path": "src/radix/internal/dismissable-layer.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/dismissable-layer.ts"
+        },
+        {
+          "path": "src/radix/internal/focus-scope.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/focus-scope.ts"
+        },
+        {
+          "path": "src/radix/internal/modal-layer.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/modal-layer.ts"
+        },
+        {
+          "path": "src/radix/internal/popper.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/popper.tsx"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/radix/internal/use-size.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-size.ts"
+        },
+        {
+          "path": "src/radix/internal/portal.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/portal.tsx"
+        },
+        {
+          "path": "src/radix/internal/presence.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/presence.tsx"
+        },
+        {
+          "path": "src/radix/internal/element.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/element.ts"
+        },
+        {
+          "path": "src/radix/internal/typeahead.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/typeahead.ts"
+        },
+        {
+          "path": "src/radix/internal/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-controllable-state.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-hover-card",
+      "type": "registry:lib",
+      "dependencies": ["@floating-ui/dom"],
+      "registryDependencies": ["@preactcn/radix-slot"],
+      "files": [
+        {
+          "path": "src/radix/hover-card.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/hover-card.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/dismissable-layer.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/dismissable-layer.ts"
+        },
+        {
+          "path": "src/radix/internal/focus-scope.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/focus-scope.ts"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/popper.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/popper.tsx"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/radix/internal/use-size.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-size.ts"
+        },
+        {
+          "path": "src/radix/internal/portal.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/portal.tsx"
+        },
+        {
+          "path": "src/radix/internal/presence.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/presence.tsx"
+        },
+        {
+          "path": "src/radix/internal/element.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/element.ts"
+        },
+        {
+          "path": "src/radix/internal/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-controllable-state.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-label",
+      "type": "registry:lib",
+      "registryDependencies": ["@preactcn/radix-slot"],
+      "files": [
+        {
+          "path": "src/radix/label.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/label.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-menubar",
+      "type": "registry:lib",
+      "dependencies": ["@floating-ui/dom"],
+      "registryDependencies": [
+        "@preactcn/radix-direction",
+        "@preactcn/radix-slot"
+      ],
+      "files": [
+        {
+          "path": "src/radix/menubar.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/menubar.tsx"
+        },
+        {
+          "path": "src/radix/internal/collection.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/collection.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/menu.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/menu.tsx"
+        },
+        {
+          "path": "src/radix/internal/dismissable-layer.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/dismissable-layer.ts"
+        },
+        {
+          "path": "src/radix/internal/focus-scope.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/focus-scope.ts"
+        },
+        {
+          "path": "src/radix/internal/modal-layer.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/modal-layer.ts"
+        },
+        {
+          "path": "src/radix/internal/popper.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/popper.tsx"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/radix/internal/use-size.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-size.ts"
+        },
+        {
+          "path": "src/radix/internal/portal.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/portal.tsx"
+        },
+        {
+          "path": "src/radix/internal/presence.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/presence.tsx"
+        },
+        {
+          "path": "src/radix/internal/element.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/element.ts"
+        },
+        {
+          "path": "src/radix/internal/typeahead.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/typeahead.ts"
+        },
+        {
+          "path": "src/radix/internal/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-controllable-state.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-navigation-menu",
+      "type": "registry:lib",
+      "registryDependencies": [
+        "@preactcn/radix-direction",
+        "@preactcn/radix-slot"
+      ],
+      "files": [
+        {
+          "path": "src/radix/navigation-menu.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/navigation-menu.tsx"
+        },
+        {
+          "path": "src/radix/internal/collection.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/collection.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/dismissable-layer.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/dismissable-layer.ts"
+        },
+        {
+          "path": "src/radix/internal/focus-scope.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/focus-scope.ts"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/radix/internal/presence.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/presence.tsx"
+        },
+        {
+          "path": "src/radix/internal/element.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/element.ts"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-controllable-state.ts"
+        },
+        {
+          "path": "src/radix/internal/use-size.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-size.ts"
+        },
+        {
+          "path": "src/radix/internal/visually-hidden.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/visually-hidden.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radix-popover",
+      "type": "registry:lib",
+      "dependencies": ["@floating-ui/dom"],
+      "registryDependencies": ["@preactcn/radix-slot"],
+      "files": [
+        {
+          "path": "src/radix/popover.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/popover.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/dismissable-layer.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/dismissable-layer.ts"
+        },
+        {
+          "path": "src/radix/internal/focus-scope.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/focus-scope.ts"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/non-modal-layer.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/non-modal-layer.ts"
+        },
+        {
+          "path": "src/radix/internal/popper.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/popper.tsx"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/radix/internal/use-size.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-size.ts"
+        },
+        {
+          "path": "src/radix/internal/portal.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/portal.tsx"
+        },
+        {
+          "path": "src/radix/internal/presence.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/presence.tsx"
+        },
+        {
+          "path": "src/radix/internal/element.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/element.ts"
+        },
+        {
+          "path": "src/radix/internal/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-controllable-state.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-progress",
+      "type": "registry:lib",
+      "registryDependencies": ["@preactcn/radix-slot"],
+      "files": [
+        {
+          "path": "src/radix/progress.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/progress.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-radio-group",
+      "type": "registry:lib",
+      "registryDependencies": [
+        "@preactcn/radix-direction",
+        "@preactcn/radix-slot"
+      ],
+      "files": [
+        {
+          "path": "src/radix/radio-group.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/radio-group.tsx"
+        },
+        {
+          "path": "src/radix/internal/bubble-input.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/bubble-input.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/use-size.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-size.ts"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/presence.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/presence.tsx"
+        },
+        {
+          "path": "src/radix/internal/element.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/element.ts"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/radix/internal/roving-focus.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/roving-focus.tsx"
+        },
+        {
+          "path": "src/radix/internal/collection.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/collection.tsx"
+        },
+        {
+          "path": "src/radix/internal/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-controllable-state.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-scroll-area",
+      "type": "registry:lib",
+      "registryDependencies": [
+        "@preactcn/radix-direction",
+        "@preactcn/radix-slot"
+      ],
+      "files": [
+        {
+          "path": "src/radix/scroll-area.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/scroll-area.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/presence.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/presence.tsx"
+        },
+        {
+          "path": "src/radix/internal/element.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/element.ts"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-select",
+      "type": "registry:lib",
+      "dependencies": ["@floating-ui/dom"],
+      "registryDependencies": [
+        "@preactcn/radix-direction",
+        "@preactcn/radix-slot"
+      ],
+      "files": [
+        {
+          "path": "src/radix/select.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/select.tsx"
+        },
+        {
+          "path": "src/radix/internal/collection.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/collection.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/dismissable-layer.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/dismissable-layer.ts"
+        },
+        {
+          "path": "src/radix/internal/focus-scope.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/focus-scope.ts"
+        },
+        {
+          "path": "src/radix/internal/modal-layer.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/modal-layer.ts"
+        },
+        {
+          "path": "src/radix/internal/popper.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/popper.tsx"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/radix/internal/use-size.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-size.ts"
+        },
+        {
+          "path": "src/radix/internal/portal.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/portal.tsx"
+        },
+        {
+          "path": "src/radix/internal/presence.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/presence.tsx"
+        },
+        {
+          "path": "src/radix/internal/element.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/element.ts"
+        },
+        {
+          "path": "src/radix/internal/typeahead.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/typeahead.ts"
+        },
+        {
+          "path": "src/radix/internal/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-controllable-state.ts"
+        },
+        {
+          "path": "src/radix/internal/visually-hidden.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/visually-hidden.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radix-separator",
+      "type": "registry:lib",
+      "registryDependencies": ["@preactcn/radix-slot"],
+      "files": [
+        {
+          "path": "src/radix/separator.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/separator.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-slider",
+      "type": "registry:lib",
+      "registryDependencies": [
+        "@preactcn/radix-direction",
+        "@preactcn/radix-slot"
+      ],
+      "files": [
+        {
+          "path": "src/radix/slider.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/slider.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/radix/internal/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-controllable-state.ts"
+        },
+        {
+          "path": "src/radix/internal/use-size.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-size.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-slot",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "src/radix/slot.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/slot.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/element.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/element.ts"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-switch",
+      "type": "registry:lib",
+      "registryDependencies": ["@preactcn/radix-slot"],
+      "files": [
+        {
+          "path": "src/radix/switch.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/switch.tsx"
+        },
+        {
+          "path": "src/radix/internal/bubble-input.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/bubble-input.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/use-size.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-size.ts"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/radix/internal/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-controllable-state.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-tabs",
+      "type": "registry:lib",
+      "registryDependencies": [
+        "@preactcn/radix-direction",
+        "@preactcn/radix-slot"
+      ],
+      "files": [
+        {
+          "path": "src/radix/tabs.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/tabs.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/presence.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/presence.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/element.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/element.ts"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/radix/internal/roving-focus.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/roving-focus.tsx"
+        },
+        {
+          "path": "src/radix/internal/collection.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/collection.tsx"
+        },
+        {
+          "path": "src/radix/internal/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-controllable-state.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-toggle-group",
+      "type": "registry:lib",
+      "registryDependencies": [
+        "@preactcn/radix-direction",
+        "@preactcn/radix-slot",
+        "@preactcn/radix-toggle"
+      ],
+      "files": [
+        {
+          "path": "src/radix/toggle-group.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/toggle-group.tsx"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/radix/internal/roving-focus.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/roving-focus.tsx"
+        },
+        {
+          "path": "src/radix/internal/collection.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/collection.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-controllable-state.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-toggle",
+      "type": "registry:lib",
+      "registryDependencies": ["@preactcn/radix-slot"],
+      "files": [
+        {
+          "path": "src/radix/toggle.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/toggle.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/radix/internal/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-controllable-state.ts"
+        }
+      ]
+    },
+    {
+      "name": "radix-tooltip",
+      "type": "registry:lib",
+      "dependencies": ["@floating-ui/dom"],
+      "registryDependencies": ["@preactcn/radix-slot"],
+      "files": [
+        {
+          "path": "src/radix/tooltip.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/tooltip.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/dismissable-layer.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/dismissable-layer.ts"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/popper.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/popper.tsx"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/radix/internal/use-size.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-size.ts"
+        },
+        {
+          "path": "src/radix/internal/portal.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/portal.tsx"
+        },
+        {
+          "path": "src/radix/internal/presence.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/presence.tsx"
+        },
+        {
+          "path": "src/radix/internal/element.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/element.ts"
+        },
+        {
+          "path": "src/radix/internal/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-controllable-state.ts"
+        },
+        {
+          "path": "src/radix/internal/visually-hidden.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/visually-hidden.tsx"
+        }
+      ]
+    },
+    {
+      "name": "shim-base-ui-react",
+      "type": "registry:lib",
+      "dependencies": ["@floating-ui/dom"],
+      "files": [
+        {
+          "path": "src/shims/base-ui-react.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/shims/base-ui-react.tsx"
+        },
+        {
+          "path": "src/shims/internal/base-ui-combobox.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/shims/internal/base-ui-combobox.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/dismissable-layer.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/dismissable-layer.ts"
+        },
+        {
+          "path": "src/radix/internal/focus-scope.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/focus-scope.ts"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/modal-layer.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/modal-layer.ts"
+        },
+        {
+          "path": "src/radix/internal/portal.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/portal.tsx"
+        },
+        {
+          "path": "src/radix/internal/presence.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/presence.tsx"
+        },
+        {
+          "path": "src/radix/internal/element.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/element.ts"
+        },
+        {
+          "path": "src/shims/internal/shadcn-react-use-render.ts",
+          "type": "registry:lib",
+          "target": "src/lib/shims/internal/shadcn-react-use-render.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/shims/internal/base-ui-combobox-position.ts",
+          "type": "registry:lib",
+          "target": "src/lib/shims/internal/base-ui-combobox-position.ts"
+        }
+      ]
+    },
+    {
+      "name": "shim-cmdk",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "src/shims/cmdk.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/shims/cmdk.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-event-handlers.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-event-handlers.ts"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        }
+      ]
+    },
+    {
+      "name": "shim-embla-carousel-react",
+      "type": "registry:lib",
+      "dependencies": ["embla-carousel", "embla-carousel-reactive-utils"],
+      "files": [
+        {
+          "path": "src/shims/embla-carousel-react.ts",
+          "type": "registry:lib",
+          "target": "src/lib/shims/embla-carousel-react.ts"
+        }
+      ]
+    },
+    {
+      "name": "shim-input-otp",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "src/shims/input-otp.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/shims/input-otp.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        }
+      ]
+    },
+    {
+      "name": "shim-next-themes",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "src/shims/next-themes.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/shims/next-themes.tsx"
+        }
+      ]
+    },
+    {
+      "name": "shim-react-day-picker-locale",
+      "type": "registry:lib",
+      "dependencies": ["date-fns"],
+      "registryDependencies": ["@preactcn/shim-react-day-picker"],
+      "files": [
+        {
+          "path": "src/shims/react-day-picker-locale.ts",
+          "type": "registry:lib",
+          "target": "src/lib/shims/react-day-picker-locale.ts"
+        }
+      ]
+    },
+    {
+      "name": "shim-react-day-picker",
+      "type": "registry:lib",
+      "dependencies": ["@date-fns/tz", "date-fns"],
+      "files": [
+        {
+          "path": "src/shims/react-day-picker.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/shims/react-day-picker.tsx"
+        },
+        {
+          "path": "src/shims/internal/react-day-picker-core.ts",
+          "type": "registry:lib",
+          "target": "src/lib/shims/internal/react-day-picker-core.ts"
+        }
+      ]
+    },
+    {
+      "name": "shim-react-resizable-panels",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "src/shims/react-resizable-panels.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/shims/react-resizable-panels.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        }
+      ]
+    },
+    {
+      "name": "shim-shadcn-react-message-scroller",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "src/shims/shadcn-react-message-scroller.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/shims/shadcn-react-message-scroller.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/shims/internal/shadcn-react-use-render.ts",
+          "type": "registry:lib",
+          "target": "src/lib/shims/internal/shadcn-react-use-render.ts"
+        },
+        {
+          "path": "src/radix/internal/element.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/element.ts"
+        }
+      ]
+    },
+    {
+      "name": "shim-shadcn-react-questionnaire",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "src/shims/shadcn-react-questionnaire.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/shims/shadcn-react-questionnaire.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/shims/internal/shadcn-react-use-render.ts",
+          "type": "registry:lib",
+          "target": "src/lib/shims/internal/shadcn-react-use-render.ts"
+        },
+        {
+          "path": "src/radix/internal/element.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/element.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        }
+      ]
+    },
+    {
+      "name": "shim-sonner",
+      "type": "registry:lib",
+      "files": [
+        {
+          "path": "src/shims/sonner.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/shims/sonner.tsx"
+        },
+        {
+          "path": "src/shims/internal/sonner-styles.ts",
+          "type": "registry:lib",
+          "target": "src/lib/shims/internal/sonner-styles.ts"
+        }
+      ]
+    },
+    {
+      "name": "shim-vaul",
+      "type": "registry:lib",
+      "registryDependencies": [
+        "@preactcn/radix-dialog",
+        "@preactcn/radix-slot"
+      ],
+      "files": [
+        {
+          "path": "src/shims/vaul.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/shims/vaul.tsx"
+        },
+        {
+          "path": "src/radix/internal/compose-refs.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/compose-refs.ts"
+        },
+        {
+          "path": "src/radix/internal/create-context.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/create-context.tsx"
+        },
+        {
+          "path": "src/radix/internal/forward-ref.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/forward-ref.ts"
+        },
+        {
+          "path": "src/radix/internal/primitive.tsx",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/primitive.tsx"
+        },
+        {
+          "path": "src/radix/internal/merge-props.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/merge-props.ts"
+        },
+        {
+          "path": "src/radix/internal/style.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/style.ts"
+        },
+        {
+          "path": "src/radix/internal/use-controllable-state.ts",
+          "type": "registry:lib",
+          "target": "src/lib/radix/internal/use-controllable-state.ts"
+        },
+        {
+          "path": "src/shims/internal/vaul-styles.ts",
+          "type": "registry:lib",
+          "target": "src/lib/shims/internal/vaul-styles.ts"
+        }
+      ]
+    },
+    {
+      "name": "use-highlighted-code",
+      "type": "registry:hook",
+      "dependencies": ["shiki"],
+      "files": [
+        {
+          "path": "src/hooks/use-highlighted-code.ts",
+          "type": "registry:hook"
+        },
+        { "path": "src/libs/highlighter.tsx", "type": "registry:lib" }
+      ]
+    },
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "files": [{ "path": "src/hooks/use-mobile.ts", "type": "registry:hook" }]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "dependencies": ["lucide-preact"],
+      "registryDependencies": ["@preactcn/radix-accordion", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/accordion.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["@preactcn/utils"],
+      "files": [{ "path": "src/ui/alert.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "@preactcn/button",
+        "@preactcn/radix-alert-dialog",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/alert-dialog.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "registryDependencies": ["@preactcn/radix-aspect-ratio"],
+      "files": [{ "path": "src/ui/aspect-ratio.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "attachment",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [
+        "@preactcn/button",
+        "@preactcn/radix-slot",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/attachment.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "registryDependencies": ["@preactcn/radix-avatar", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/avatar.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["@preactcn/radix-slot", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/badge.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "dependencies": ["lucide-preact"],
+      "registryDependencies": ["@preactcn/radix-slot", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/breadcrumb.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "bubble",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["@preactcn/radix-slot", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/bubble.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["@preactcn/radix-slot", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/button.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [
+        "@preactcn/radix-slot",
+        "@preactcn/separator",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/button-group.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "dependencies": ["date-fns", "lucide-preact"],
+      "registryDependencies": [
+        "@preactcn/button",
+        "@preactcn/shim-react-day-picker",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/calendar.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "registryDependencies": ["@preactcn/utils"],
+      "files": [{ "path": "src/ui/card.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "dependencies": ["lucide-preact"],
+      "registryDependencies": [
+        "@preactcn/button",
+        "@preactcn/shim-embla-carousel-react",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/carousel.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "dependencies": ["@preactcn/recharts@3.8.0-preact.1"],
+      "registryDependencies": ["@preactcn/utils"],
+      "files": [{ "path": "src/ui/chart.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "dependencies": ["lucide-preact"],
+      "registryDependencies": ["@preactcn/radix-checkbox", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/checkbox.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority", "lucide-preact"],
+      "registryDependencies": [
+        "@preactcn/button",
+        "@preactcn/use-highlighted-code",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/code-block.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "registryDependencies": ["@preactcn/radix-collapsible"],
+      "files": [{ "path": "src/ui/collapsible.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "dependencies": ["lucide-preact"],
+      "registryDependencies": [
+        "@preactcn/button",
+        "@preactcn/input-group",
+        "@preactcn/shim-base-ui-react",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/combobox.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "dependencies": ["lucide-preact"],
+      "registryDependencies": [
+        "@preactcn/dialog",
+        "@preactcn/input-group",
+        "@preactcn/shim-cmdk",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/command.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "dependencies": ["lucide-preact"],
+      "registryDependencies": [
+        "@preactcn/radix-context-menu",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/context-menu.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "dependencies": ["lucide-preact"],
+      "registryDependencies": [
+        "@preactcn/button",
+        "@preactcn/radix-dialog",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/dialog.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "direction",
+      "type": "registry:ui",
+      "registryDependencies": ["@preactcn/radix-direction"],
+      "files": [{ "path": "src/ui/direction.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "registryDependencies": ["@preactcn/shim-vaul", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/drawer.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "dependencies": ["lucide-preact"],
+      "registryDependencies": [
+        "@preactcn/radix-dropdown-menu",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/dropdown-menu.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["@preactcn/utils"],
+      "files": [{ "path": "src/ui/empty.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [
+        "@preactcn/label",
+        "@preactcn/separator",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/field.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "registryDependencies": ["@preactcn/radix-hover-card", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/hover-card.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "registryDependencies": ["@preactcn/utils"],
+      "files": [{ "path": "src/ui/input.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [
+        "@preactcn/button",
+        "@preactcn/input",
+        "@preactcn/textarea",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/input-group.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "dependencies": ["lucide-preact"],
+      "registryDependencies": ["@preactcn/shim-input-otp", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/input-otp.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "item",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [
+        "@preactcn/radix-slot",
+        "@preactcn/separator",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/item.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "registryDependencies": ["@preactcn/utils"],
+      "files": [{ "path": "src/ui/kbd.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "registryDependencies": ["@preactcn/radix-label", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/label.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "marker",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["@preactcn/radix-slot", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/marker.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "dependencies": ["lucide-preact"],
+      "registryDependencies": ["@preactcn/radix-menubar", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/menubar.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "registryDependencies": ["@preactcn/utils"],
+      "files": [{ "path": "src/ui/message.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "message-scroller",
+      "type": "registry:ui",
+      "dependencies": ["lucide-preact"],
+      "registryDependencies": [
+        "@preactcn/button",
+        "@preactcn/shim-shadcn-react-message-scroller",
+        "@preactcn/utils"
+      ],
+      "files": [
+        { "path": "src/ui/message-scroller.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
+      "name": "native-select",
+      "type": "registry:ui",
+      "dependencies": ["lucide-preact"],
+      "registryDependencies": ["@preactcn/utils"],
+      "files": [{ "path": "src/ui/native-select.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority", "lucide-preact"],
+      "registryDependencies": [
+        "@preactcn/radix-navigation-menu",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/navigation-menu.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "dependencies": ["lucide-preact"],
+      "registryDependencies": ["@preactcn/button", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/pagination.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "registryDependencies": ["@preactcn/radix-popover", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/popover.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "registryDependencies": ["@preactcn/radix-progress", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/progress.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "questionnaire",
+      "type": "registry:ui",
+      "dependencies": ["lucide-preact"],
+      "registryDependencies": [
+        "@preactcn/button",
+        "@preactcn/shim-shadcn-react-questionnaire",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/questionnaire.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "@preactcn/radix-radio-group",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/radio-group.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "@preactcn/shim-react-resizable-panels",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/resizable.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "@preactcn/radix-scroll-area",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/scroll-area.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "dependencies": ["lucide-preact"],
+      "registryDependencies": ["@preactcn/radix-select", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/select.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "registryDependencies": ["@preactcn/radix-separator", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/separator.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "dependencies": ["lucide-preact"],
+      "registryDependencies": [
+        "@preactcn/button",
+        "@preactcn/radix-dialog",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/sheet.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority", "lucide-preact"],
+      "registryDependencies": [
+        "@preactcn/button",
+        "@preactcn/input",
+        "@preactcn/radix-slot",
+        "@preactcn/separator",
+        "@preactcn/sheet",
+        "@preactcn/skeleton",
+        "@preactcn/tooltip",
+        "@preactcn/use-mobile",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/sidebar.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "registryDependencies": ["@preactcn/utils"],
+      "files": [{ "path": "src/ui/skeleton.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "registryDependencies": ["@preactcn/radix-slider", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/slider.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "dependencies": ["lucide-preact"],
+      "registryDependencies": [
+        "@preactcn/shim-next-themes",
+        "@preactcn/shim-sonner"
+      ],
+      "files": [{ "path": "src/ui/sonner.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "dependencies": ["lucide-preact"],
+      "registryDependencies": ["@preactcn/utils"],
+      "files": [{ "path": "src/ui/spinner.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "registryDependencies": ["@preactcn/radix-switch", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/switch.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "registryDependencies": ["@preactcn/utils"],
+      "files": [{ "path": "src/ui/table.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["@preactcn/radix-tabs", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/tabs.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "registryDependencies": ["@preactcn/utils"],
+      "files": [{ "path": "src/ui/textarea.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["@preactcn/radix-toggle", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/toggle.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [
+        "@preactcn/radix-toggle-group",
+        "@preactcn/toggle",
+        "@preactcn/utils"
+      ],
+      "files": [{ "path": "src/ui/toggle-group.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "registryDependencies": ["@preactcn/radix-tooltip", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/tooltip.tsx", "type": "registry:ui" }]
+    },
+    {
+      "name": "trace",
+      "type": "registry:ui",
+      "dependencies": ["lucide-preact"],
+      "registryDependencies": ["@preactcn/collapsible", "@preactcn/utils"],
+      "files": [{ "path": "src/ui/trace.tsx", "type": "registry:ui" }]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "preact": ["./node_modules/preact11"],
+      "preact/*": ["./node_modules/preact11/*"]
+    }
+  }
+}

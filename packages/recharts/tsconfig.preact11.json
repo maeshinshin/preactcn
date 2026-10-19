@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "recharts": ["./dist/index.d.ts"],
+      "@preactcn/recharts": ["./dist/index.d.ts"],
+      "@/components/ui/chart": ["./test/.gen/ui/chart.tsx"],
+      "@/components/ui/card": ["./test/stubs/card.tsx"],
+      "@/components/example": ["./test/stubs/example.tsx"],
+      "@/lib/utils": ["./test/stubs/utils.ts"],
+      "preact": ["./node_modules/preact11"],
+      "preact/*": ["./node_modules/preact11/*"]
+    }
+  }
+}

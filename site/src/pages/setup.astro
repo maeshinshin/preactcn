@@ -1,0 +1,9 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Docs from "../chrome/Docs.astro";
+// the repository README is the single source of truth for the setup steps
+import { Content } from "../../../README.md";
+---
+<Layout title="Setup - preactcn" current="setup">
+  <Docs><Content /></Docs>
+</Layout>
