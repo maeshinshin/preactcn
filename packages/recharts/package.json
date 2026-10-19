@@ -1,9 +1,13 @@
 {
   "name": "@preactcn/recharts",
   "version": "3.8.0-preact.1",
-  "private": true,
   "description": "recharts converted to Preact: the upstream source with its React imports redirected to a small Preact adapter",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maeshinshin/preactcn.git",
+    "directory": "packages/recharts"
+  },
   "type": "module",
   "sideEffects": [
     "./dist/_runtime/adapter.js"

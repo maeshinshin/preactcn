@@ -1,9 +1,11 @@
 name: verify
-# A push to main that passes also deploys the registry to GitHub Pages, so Pages is never ahead of main and a red main keeps the last good one online.
+# A run on main that passes also publishes (@preactcn/recharts to npm in the production repository, then the registry and site to GitHub Pages),
+# so nothing published is ahead of main and a red main keeps the last good one online. release.yml dispatches it after merging a release.
 on:
   pull_request:
   push:
     branches: [main]
+  workflow_dispatch:
 permissions:
   contents: read
 concurrency:
@@ -20,7 +22,7 @@ jobs:
       - uses: ./.github/actions/verify
       # verify.sh serves the registry from localhost; the published one names its own homepage
       - name: Build the registry for GitHub Pages
-        if: github.event_name == 'push'
+        if: github.ref == 'refs/heads/main'
         env:
           REGISTRY_HOMEPAGE: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
         run: |
@@ -30,7 +32,7 @@ jobs:
           pnpm dlx "$(cat ../pipeline/upstream/RELEASE)" build -o dist/r
       # the site is another consumer of the registry (shadcn add from localhost, examples from consumer/src, which verify.sh left behind)
       - name: Build the site
-        if: github.event_name == 'push'
+        if: github.ref == 'refs/heads/main'
         env:
           BASE_PATH: /${{ github.event.repository.name }}
           SITE_URL: https://${{ github.repository_owner }}.github.io
@@ -43,24 +45,46 @@ jobs:
           pnpm exec astro build
       # site at the root, the registry (r/, npm/) beside it
       - name: Assemble the Pages artifact
-        if: github.event_name == 'push'
+        if: github.ref == 'refs/heads/main'
         run: |
           mkdir pages
           cp -r site/dist/. pages/
           cp -r packages/registry/dist/. pages/
+      - uses: actions/upload-artifact@v7
+        if: github.ref == 'refs/heads/main'
+        with:
+          name: recharts
+          path: packages/registry/dist/npm/*.tgz
       - uses: actions/upload-pages-artifact@v5
-        if: github.event_name == 'push'
+        if: github.ref == 'refs/heads/main'
         with:
           path: pages
 
-  # Not in this repository, which never publishes: the production repo adds a `publish-recharts` job here (needs: verify, if: push, id-token: write)
-  # and makes `deploy` need it too, because the chart item pins @preactcn/recharts@<version> and must not go online before that version is on npm.
-  # The job runs `pnpm --dir packages/pipeline recharts`, `pnpm --dir packages/recharts build` and
-  # `npm publish --provenance --access public --tag <dist-tag>` (a prerelease version needs --tag) when `npm view @preactcn/recharts@<version>` finds nothing.
-  # Once it publishes, delete consumer/.npmrc and consumer-fresh/.npmrc and re-lock both.
-  deploy:
+  # chart pins @preactcn/recharts@<version>, so that version reaches npm before the registry naming it goes online.
+  # The tarball is the one verify.sh installed into the consumers. Trusted publishing (OIDC): the package's npm settings trust this workflow.
+  publish-recharts:
     needs: verify
-    if: github.event_name == 'push'
+    if: github.ref == 'refs/heads/main' && github.repository == 'maeshinshin/preactcn'
+    runs-on: ubuntu-24.04
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      - uses: actions/download-artifact@v8
+        with:
+          name: recharts
+      - run: |
+          tarball=$(ls recharts-*.tgz)
+          version=${tarball#recharts-}; version=${version%.tgz}
+          if [ -n "$(npm view "@preactcn/recharts@$version" version 2>/dev/null)" ]; then echo "@preactcn/recharts@$version is on npm"; exit 0; fi
+          npm publish "./$tarball" --provenance --access public --tag latest
+
+  deploy:
+    needs: [verify, publish-recharts]
+    if: always() && github.ref == 'refs/heads/main' && needs.verify.result == 'success' && (needs.publish-recharts.result == 'success' || needs.publish-recharts.result == 'skipped')
     runs-on: ubuntu-24.04
     permissions:
       pages: write
