@@ -1,5 +1,3 @@
-"use client"
-
 import type { ComponentProps } from "preact"
 import { cn } from "@/lib/utils"
 import * as HoverCardPrimitive from "@/lib/radix/hover-card"

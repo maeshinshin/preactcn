@@ -551,6 +551,12 @@ export function convertSource(source: string): string {
   convertReact(file, source, edits, svgRefs, styleSpreads)
   convertSvgAttributes(file, edits)
 
+  // Preact has no server components, so Next.js's client-boundary directive means nothing; it goes with the blank lines after it
+  const first = file.getStatements()[0]
+  if (first && /^["']use client["'];?$/.test(first.getText())) {
+    edits.push({ start: first.getStart(), end: first.getEnd() + /^\n*/.exec(source.slice(first.getEnd()))![0].length, text: "" })
+  }
+
   return applyEdits(source, edits)
 }
 

@@ -1,5 +1,3 @@
-"use client"
-
 import type { ComponentProps, CSSProperties } from "preact"
 import { useEffect, useState } from "preact/hooks"
 import { cva, type VariantProps } from "class-variance-authority"

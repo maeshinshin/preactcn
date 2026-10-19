@@ -1,5 +1,3 @@
-"use client"
-
 import type { CSSProperties } from "preact"
 import { useTheme } from "@/lib/shims/next-themes"
 import { Toaster as Sonner, type ToasterProps } from "@/lib/shims/sonner"

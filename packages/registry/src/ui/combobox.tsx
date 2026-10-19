@@ -1,5 +1,3 @@
-"use client"
-
 import type { ComponentProps } from "preact"
 import { useRef } from "preact/hooks"
 import { Combobox as ComboboxPrimitive } from "@/lib/shims/base-ui-react"

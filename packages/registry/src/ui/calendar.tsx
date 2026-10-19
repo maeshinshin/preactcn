@@ -1,5 +1,3 @@
-"use client"
-
 import type { ComponentProps } from "preact"
 import { useEffect, useRef } from "preact/hooks"
 import { cn } from "@/lib/utils"

@@ -1,5 +1,3 @@
-"use client"
-
 import type { ComponentChildren, ComponentProps } from "preact"
 import { useMemo } from "preact/hooks"
 import { cva, type VariantProps } from "class-variance-authority"

@@ -423,9 +423,13 @@ describe("untouched code", () => {
     expect(out).toBe('import { cn } from "@/lib/utils"\n' + body)
   })
 
-  it("leaves a directive prologue alone", () => {
-    const out = convertSource('"use client"\n\nimport { cn } from "cn"\n')
-    expect(out).toBe('"use client"\n\nimport { cn } from "@/lib/utils"\n')
+  it("drops the use client directive and the blank lines after it", () => {
+    expect(convertSource('"use client"\n\nimport { cn } from "cn"\n')).toBe('import { cn } from "@/lib/utils"\n')
+    expect(convertSource("'use client';\nexport const a = 1\n")).toBe("export const a = 1\n")
+  })
+
+  it("keeps other directives", () => {
+    expect(convertSource('"use strict"\n\nexport const a = 1\n')).toBe('"use strict"\n\nexport const a = 1\n')
   })
 })
 

@@ -1,5 +1,3 @@
-"use client"
-
 import type { ComponentProps } from "preact"
 import { useMemo } from "preact/hooks"
 import { cn } from "@/lib/utils"

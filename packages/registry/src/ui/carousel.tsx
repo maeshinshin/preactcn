@@ -1,5 +1,3 @@
-"use client"
-
 import { createContext } from "preact"
 import type { ComponentProps, TargetedKeyboardEvent } from "preact"
 import { useCallback, useContext, useEffect, useState } from "preact/hooks"

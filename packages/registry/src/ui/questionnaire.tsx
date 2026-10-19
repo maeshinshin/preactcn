@@ -1,5 +1,3 @@
-"use client"
-
 import type { ComponentProps } from "preact"
 import { Questionnaire as QuestionnairePrimitive } from "@/lib/shims/shadcn-react-questionnaire"
 import { cn } from "@/lib/utils"

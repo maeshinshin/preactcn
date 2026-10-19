@@ -1,5 +1,3 @@
-"use client"
-
 import type { ComponentProps } from "preact"
 import { Command as CommandPrimitive } from "@/lib/shims/cmdk"
 import { cn } from "@/lib/utils"

@@ -1,5 +1,3 @@
-"use client"
-
 import type { ComponentProps } from "preact"
 import { cn } from "@/lib/utils"
 import * as SwitchPrimitive from "@/lib/radix/switch"
