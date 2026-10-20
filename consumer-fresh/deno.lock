@@ -978,7 +978,7 @@
       ]
     },
     "@preactcn/recharts@3.8.0-preact.1_preact@10.29.8": {
-      "integrity": "sha512-+fQ60sL7lk1eAdd8a05yByMH03PZnwch7WkpPJ/e6yVP6Qs8X7o0HGJJ12GERUgs5cj551T/mucwROJqo0GNSw==",
+      "integrity": "sha512-lMhlmveWPMCRLRw7j4EjmjGQmmjDX36nNxnzC/aVo4eXwXMRZkDHi75IQL2HLtCFdTnzomqzJ6Zs1WulNctetQ==",
       "dependencies": [
         "@reduxjs/toolkit",
         "clsx",

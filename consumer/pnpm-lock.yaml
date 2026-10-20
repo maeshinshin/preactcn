@@ -304,7 +304,7 @@ packages:
       vite: 2.x || 3.x || 4.x || 5.x || 6.x || 7.x || 8.x
 
   '@preactcn/recharts@3.8.0-preact.1':
-    resolution: {integrity: sha512-+fQ60sL7lk1eAdd8a05yByMH03PZnwch7WkpPJ/e6yVP6Qs8X7o0HGJJ12GERUgs5cj551T/mucwROJqo0GNSw==, tarball: http://localhost:8080/npm/recharts-3.8.0-preact.1.tgz}
+    resolution: {integrity: sha512-lMhlmveWPMCRLRw7j4EjmjGQmmjDX36nNxnzC/aVo4eXwXMRZkDHi75IQL2HLtCFdTnzomqzJ6Zs1WulNctetQ==, tarball: http://localhost:8080/npm/recharts-3.8.0-preact.1.tgz}
     peerDependencies:
       preact: '>=10.29 <12'
 
