@@ -155,6 +155,11 @@ html[data-nav-open] #sidebar { display: block; }
 /* a section's heading is the page's, so the title Example draws inside its frame goes */
 [data-titled] [data-slot="example"] > :not([data-slot="example-content"]) { display: none; }
 
+/* upstream's example card pads 3rem on every side, which leaves a phone about 230 px; below sm it pads 0.75rem and scrolls sideways what still does not fit */
+@media (width < 40rem) {
+  [data-preview] [data-slot="example-content"] { padding: 0.75rem; overflow: auto hidden; }
+}
+
 /* the frame is the containing block for position: fixed examples (the sidebar), so they stay inside it */
 [data-preview] { contain: layout; }
 

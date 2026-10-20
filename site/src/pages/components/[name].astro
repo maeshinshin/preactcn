@@ -35,7 +35,7 @@ const command = `npx shadcn@latest add @preactcn/${item.name}`;
       <section class="mb-10 scroll-mt-20" id={whole ? undefined : part.id}>
         {!whole && <h2 class="mb-3 text-lg font-medium tracking-tight"><a class="hover:underline" href={`#${part.id}`}>{part.title}</a></h2>}
         <PreviewTabs client:load id={part.id} />
-        <div id={`${part.id}-preview`} data-preview data-example data-section data-titled={whole ? undefined : ""} class="mt-3 overflow-clip rounded-xl border bg-muted p-4 sm:p-6 dark:bg-background">
+        <div id={`${part.id}-preview`} data-preview data-example data-section data-titled={whole ? undefined : ""} class="mt-3 overflow-clip rounded-xl border bg-muted p-2 sm:p-6 dark:bg-background">
           <Islands name={item.name} section={part.fn} />
         </div>
         <div id={`${part.id}-code`} hidden class="mt-3 overflow-hidden rounded-xl border bg-card">
