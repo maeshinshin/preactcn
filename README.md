@@ -2,6 +2,8 @@
 
 shadcn/ui components for Preact. Every upstream shadcn/ui release is converted automatically to Preact: no React, no `preact/compat`, Preact 10 and 11, Vite and Deno Fresh 2. The components are served as a shadcn registry (`@preactcn`) and installed into your project with the official `shadcn` CLI, so you own the code, as with shadcn/ui.
 
+![preactcn — every shadcn/ui component running live in Preact, light and dark](https://github.com/yasirwhite/OpenDemo/releases/download/showcase-media/preactcn-demo.gif)
+
 ## Vite + Preact + Tailwind v4
 
 Start from `npm create vite@latest my-app -- --template preact-ts`, then in the project:
