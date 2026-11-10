@@ -210,7 +210,7 @@ The `shadcn` CLI reads `paths` from `tsconfig.json`, not from `tsconfig.app.json
     "hooks": "@/hooks"
   },
   "registries": {
-    "@preactcn": "https://maeshinshin.github.io/preactcn/r/{name}.json"
+    "@preactcn": "https://preactcn.maesh.dev/r/{name}.json"
   }
 }
 ```
@@ -289,7 +289,7 @@ deno add npm:shadcn npm:tw-animate-css
     "hooks": "@/hooks"
   },
   "registries": {
-    "@preactcn": "https://maeshinshin.github.io/preactcn/r/{name}.json"
+    "@preactcn": "https://preactcn.maesh.dev/r/{name}.json"
   }
 }
 ```

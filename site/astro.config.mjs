@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const src = (path) => fileURLToPath(new URL(`./src/${path}`, import.meta.url));
 
-// SITE_URL and BASE_PATH come from the Pages deploy (the repository's Pages origin and path); local dev serves from /
+// SITE_URL comes from the Pages deploy (served at the custom domain root); BASE_PATH stays for a path-prefixed host
 export default defineConfig({
   site: process.env.SITE_URL,
   base: process.env.BASE_PATH ?? "/",

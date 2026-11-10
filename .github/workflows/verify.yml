@@ -24,7 +24,7 @@ jobs:
       - name: Build the registry for GitHub Pages
         if: github.ref == 'refs/heads/main'
         env:
-          REGISTRY_HOMEPAGE: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+          REGISTRY_HOMEPAGE: https://preactcn.maesh.dev
         run: |
           pnpm --dir packages/pipeline generate
           cd packages/registry
@@ -34,8 +34,7 @@ jobs:
       - name: Build the site
         if: github.ref == 'refs/heads/main'
         env:
-          BASE_PATH: /${{ github.event.repository.name }}
-          SITE_URL: https://${{ github.repository_owner }}.github.io
+          SITE_URL: https://preactcn.maesh.dev
         run: |
           python3 -m http.server 8080 -d packages/registry/dist >/dev/null 2>&1 &
           trap 'kill $!' EXIT
